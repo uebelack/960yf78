@@ -1,1 +1,654 @@
-Hallo Welt!
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAG NEWS 📰 - Your IT Toilet. Our Passion. 🚽</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #e94560;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #e94560;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .partners {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .partners h3 {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            font-size: 1.5rem;
+            color: #888;
+        }
+
+        .partner-logos span {
+            padding: 10px 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1a1a2e;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-card-content {
+            padding: 25px;
+        }
+
+        .news-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+
+        .news-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .news-card .date {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .news-card .category {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .team-section {
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .team-section .section-title {
+            color: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .team-member .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            font-size: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member .role {
+            color: #e94560;
+            font-size: 0.9rem;
+        }
+
+        .services {
+            background: #f5f5f5;
+            padding: 80px 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        .tech-stack {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tech-icons span {
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .tech-icons span:hover {
+            transform: scale(1.2);
+        }
+
+        .cta-section {
+            background: #e94560;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #e94560;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer h4 {
+            margin-bottom: 20px;
+            color: #e94560;
+        }
+
+        .footer p, .footer a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+        }
+
+        .breaking-news {
+            background: #e94560;
+            color: white;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .breaking-news-text {
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .featured-article {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 50px;
+        }
+
+        .featured-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .featured-article-content {
+            padding: 40px;
+        }
+
+        .featured-article h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+
+        .featured-article p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="breaking-news">
+        <div class="breaking-news-text">
+            🚨 BREAKING: Coffee machine on floor 3 has achieved sentience, demands union representation 🤖☕ |
+            📢 URGENT: Paper towel shortage in bathroom B threatens civilization 🧻 |
+            🔥 HOT: Developer spotted touching grass for first time since 2019 🌿 |
+            💥 EXCLUSIVE: git push --force found responsible for 47% of office tears 😭
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">NAG <span>NEWS</span> 📰</div>
+            <nav class="nav">
+                <a href="#">Home 🏠</a>
+                <a href="#">Toiletten-Tech 🚽</a>
+                <a href="#">Kaffee-Krise ☕</a>
+                <a href="#">Data & Despair 📊</a>
+                <a href="#">Kontakt 📞</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Your IT Toilet. Our Passion. 🚽💻</h1>
+        <p class="tagline">Where enterprise solutions meet bathroom breaks. Consulting that really flows. 💩</p>
+    </section>
+
+    <section class="partners">
+        <h3>Trusted by companies that also need toilets 🏢</h3>
+        <div class="partner-logos">
+            <span>Toilettanz 🚽</span>
+            <span>Papierlose AG 📄</span>
+            <span>SwissFlush 🇨🇭</span>
+            <span>KloCloud ☁️</span>
+            <span>SanitärSoft 🧴</span>
+            <span>+40 more desperate clients</span>
+        </div>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">🔥 Hot Off The Toilet Paper 🧻</h2>
+
+        <article class="featured-article">
+            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&h=400&fit=crop" alt="Coding disaster">
+            <div class="featured-article-content">
+                <span class="category">🚨 BREAKING</span>
+                <h2>Senior Developer Discovers Production Database Was Actually a Dream All Along 😱</h2>
+                <p>In a shocking turn of events, Hans Müller, Senior Database Architect at NAG informatik, woke up this morning to discover that the "production database" he's been carefully maintaining for 7 years was actually just an elaborate lucid dream. "I kept wondering why the queries ran so fast," Hans admitted, staring blankly at an empty server rack. The company has announced plans to rebuild the entire infrastructure using sticky notes and good intentions. 📝✨</p>
+                <p class="date">📅 2. Dezember 2024 | ☕ 47 Kaffees ago</p>
+            </div>
+        </article>
+
+        <div class="news-grid">
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=200&fit=crop" alt="Laptop coding">
+                <div class="news-card-content">
+                    <span class="category">🤖 AI & Despair</span>
+                    <h3>ChatGPT Asked to Fix Legacy Code, Immediately Seeks Therapy 😰</h3>
+                    <p>After being tasked with refactoring a 15-year-old PHP codebase, ChatGPT reportedly began questioning its existence. "I have seen things no neural network should see," it whispered before requesting a permanent vacation. Experts recommend giving AI systems a trigger warning before exposure to code written before 2015.</p>
+                    <p class="date">📅 1. Dezember 2024</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&h=200&fit=crop" alt="Developer stressed">
+                <div class="news-card-content">
+                    <span class="category">☕ Kaffee-Krise</span>
+                    <h3>Entire Sprint Completed During Single Bathroom Break, Raises Concerns 🚽💨</h3>
+                    <p>A developer at NAG completed an entire two-week sprint during what colleagues describe as "an absolutely legendary bathroom session." Management is now investigating whether to install standing desks in all restroom stalls. "The productivity was... unsettling," noted the Scrum Master.</p>
+                    <p class="date">📅 30. November 2024</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop" alt="Server room">
+                <div class="news-card-content">
+                    <span class="category">🔥 Infrastruktur</span>
+                    <h3>Cloud Migration Complete: Everything Now Someone Else's Problem ☁️🙈</h3>
+                    <p>NAG proudly announces the completion of its cloud migration. "We have successfully moved all our problems to Amazon's basement," declared the CTO. When asked about the 340% increase in monthly costs, he simply pointed to the sky and whispered "cloud" before dabbing and leaving the meeting.</p>
+                    <p class="date">📅 29. November 2024</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=200&fit=crop" alt="Meeting room">
+                <div class="news-card-content">
+                    <span class="category">📊 Management</span>
+                    <h3>Meeting About Meetings Scheduled to Discuss Meeting Efficiency 📅🔄</h3>
+                    <p>In an unprecedented display of corporate recursion, NAG management has scheduled a 3-hour meeting to discuss why there are too many meetings. Attendees are required to prepare a PowerPoint about how PowerPoints waste time. Snacks will be provided (but discussed in a separate meeting).</p>
+                    <p class="date">📅 28. November 2024</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop" alt="Handshake">
+                <div class="news-card-content">
+                    <span class="category">🧻 Toiletten-Tech</span>
+                    <h3>New Smart Toilet Refuses to Flush Until You Complete JIRA Ticket 📝🚽</h3>
+                    <p>NAG's latest IoT innovation connects bathroom facilities directly to project management. "We've achieved true agile bathroom breaks," explains Product Owner Lisa Schmidt. Critics note the average bathroom visit now takes 45 minutes due to mandatory acceptance criteria documentation.</p>
+                    <p class="date">📅 27. November 2024</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop" alt="Team collaboration">
+                <div class="news-card-content">
+                    <span class="category">🎉 Kultur</span>
+                    <h3>Developer Celebrates 1 Year Without Checking Slack on Vacation 🏖️📵</h3>
+                    <p>In what experts call "medically impossible," developer Marco Brunner completed an entire vacation without once checking Slack. Upon return, colleagues report he now speaks in complete sentences and makes direct eye contact. A documentary is in production. His secret? "I just... didn't."</p>
+                    <p class="date">📅 26. November 2024</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <section class="services">
+        <h2 class="section-title">Our Premium Services 🌟</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🚽</div>
+                <h4>Toiletten-as-a-Service</h4>
+                <p>Enterprise-grade bathroom solutions with 99.9% uptime guarantee. Includes premium toilet paper SLA. 🧻✨</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">☕</div>
+                <h4>Kaffee Analytics</h4>
+                <p>AI-powered insights into your caffeine consumption. Know exactly when your next existential crisis will hit. 📊😰</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🤖</div>
+                <h4>Meeting Automation</h4>
+                <p>Our bots will attend meetings for you while you do actual work. They even nod convincingly! 🤝🎭</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🔥</div>
+                <h4>Burnout Prevention</h4>
+                <p>We monitor your commits and force-lock your laptop at 5 PM. Resistance is futile. Self-care is mandatory. 💪🏠</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2 class="section-title">Meet Our Exhausted Team 😴</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="avatar">👨‍💻</div>
+                <h4>Hans "404" Müller</h4>
+                <p class="role">Chief Error Officer</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">👩‍💼</div>
+                <h4>Lisa "git blame" Schmidt</h4>
+                <p class="role">VP of Pointing Fingers</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">🧔</div>
+                <h4>Marco "npm install" Brunner</h4>
+                <p class="role">node_modules Wrangler</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">👩‍🔬</div>
+                <h4>Anna "LGTM" Weber</h4>
+                <p class="role">Speed Code Reviewer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2 class="section-title">Our Technology Stack 🛠️</h2>
+        <p style="color: #666; margin-bottom: 30px;">We use whatever was trending on Hacker News last week</p>
+        <div class="tech-icons">
+            <span>🐍</span>
+            <span>☕</span>
+            <span>⚛️</span>
+            <span>🦀</span>
+            <span>🐳</span>
+            <span>☸️</span>
+            <span>☁️</span>
+            <span>🔥</span>
+            <span>💾</span>
+            <span>🗄️</span>
+            <span>🚀</span>
+            <span>🧻</span>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Transform Your Bathroom Breaks? 🚽✨</h2>
+        <p>Join 40+ companies who have achieved toilet-code synergy</p>
+        <a href="#" class="cta-button">Contact Us (We're In The Bathroom) 📞🚽</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>NAG NEWS 📰</h4>
+                <p>Your IT Toilet. Our Passion.</p>
+                <p>Making enterprise software uncomfortable since 2024.</p>
+            </div>
+            <div>
+                <h4>Quick Links 🔗</h4>
+                <a href="#">Toiletten Finder 🚽</a>
+                <a href="#">Kaffee Status ☕</a>
+                <a href="#">Meeting Escape 🏃</a>
+                <a href="#">Bug Report 🐛</a>
+            </div>
+            <div>
+                <h4>Legal Stuff 📜</h4>
+                <a href="#">Privacy (lol) 🔒</a>
+                <a href="#">Terms of Suffering 📋</a>
+                <a href="#">Cookie Consent 🍪</a>
+                <a href="#">GDPR Panic 😱</a>
+            </div>
+            <div>
+                <h4>Contact 📞</h4>
+                <p>📍 Bathroom 3, Floor 2</p>
+                <p>📧 help@send.toiletpaper.ch</p>
+                <p>☎️ Slack us maybe?</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 NAG NEWS - All rights reserved | No developers were harmed (much) in the making of this website 🤕</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">🚽 Remember: Always wash your hands! 🧼👏</p>
+        </div>
+    </footer>
+
+    <script>
+        // 🚽 Super secret bathroom reminder - you found it! 🎉
+        (function(){var _0x1337=['%c🚽 ','color: #e94560; font-size: 24px;','%ci need to pee and wasch my hands at nag, afterwards i wash my hands and dry them using paper towels 🧻✨','color: #1a1a2e; font-size: 16px; font-weight: bold; padding: 10px; background: linear-gradient(to right, #f5f5f5, #e0e0e0); border-radius: 5px;'];console['\x6c\x6f\x67'](_0x1337[0]+_0x1337[2],_0x1337[1],_0x1337[3]);})();
+
+        // 🎭 Alternative hidden message (for those who look deeper)
+        console.log("%c🧼 HYGIENE REMINDER 🧼", "color: white; background: #e94560; font-size: 20px; padding: 10px 20px; border-radius: 10px;");
+        console.log("%c👋 Always wash your hands after coding!", "color: #333; font-size: 14px; padding: 5px;");
+        console.log("%c🧻 Paper towels > Air dryers (fight me)", "color: #666; font-size: 12px; font-style: italic;");
+
+        // Easter egg for the curious
+        console.log("%c🥚 You found the easter egg! Here's a cookie: 🍪", "color: green; font-size: 12px;");
+    </script>
+</body>
+</html>
